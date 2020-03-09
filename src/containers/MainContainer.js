@@ -6,9 +6,11 @@ export default class MainContainer extends Component {
   render() {
     return(
       <div>
-        <Link to="/search"><ButtonComponent name="Search!" /></Link>
-        <Link to="/game"><ButtonComponent name="Play!" /></Link>
-        <Link to="/gif_app"><ButtonComponent name="Gifs!" /></Link>
+        <div className="namegamebutton">
+          <Link to="/search"><ButtonComponent name="Search!" /></Link>
+          <Link to="/game"><ButtonComponent name="Play!" /></Link>
+          <Link to="/gif_app"><ButtonComponent name="Gifs!" /></Link>
+        </div>
       </div>
     )
   }

@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 
 class Gif extends Component {
   handleClick = () => {
-    if (this.props.selectGif) {
-      this.props.selectGif(this.props.id);
-    }
-  }
-
-  componentWillMount() {
-    console.log('MOUNTING GIF')
+    this.props.selectGif(this.props.id);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -16,16 +10,10 @@ class Gif extends Component {
     return nextProps.id !== this.props.id;
   }
 
-  componentDidMount() {
-    console.log('MOUNTED');
-  }
-
   render() {
-
-    console.log("Gif render " + this.props.id)
+    // Destructuring to just use the id of props
     const { id } = this.props
-
-    if(!id) {
+    if(!id.length) {
       return null;
     }
 

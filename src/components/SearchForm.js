@@ -13,8 +13,6 @@ class SearchForm extends Component {
     this.props.fetchImages(this.state.query)
   }
 
-
-
   // Renders a form to search
   render() {
 

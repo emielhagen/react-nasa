@@ -23,7 +23,7 @@ class SearchBar extends Component {
   spaceBodies = () => {
     const spaceWords = ["moon", "earth", "jupiter", "saturn", "pluto", "mars", "venus"]
       return spaceWords.map(word =>
-        <div className="guessing">
+        <div className="guessing" key={word}>
           <button onClick={ e => this.handleSearchButton(e.target.innerText)} id={word}>{word}</button>
         </div>
       )

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
-import $ from 'jquery'
 
 import Game from './components/Game'
-import GifApp from './components/GifApp'
+import GifApp from './components/GifApp.jsx'
 import SearchForm from './components/SearchForm'
 import SearchResults from './components/SearchResults'
 
@@ -21,11 +20,11 @@ export default class App extends Component {
 
 //The NASA API is called and then the results go to the state
   fetchImages = (query = "") => {
-    $.ajax({
-      url: `https://images-api.nasa.gov/search?q=${query}`
-    }).then(json => {
-      this.setState({ images: json.collection.items })
-    })
+    fetch(`https://images-api.nasa.gov/search?q=${query}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ images: data.collection.items })
+      });
   }
 
   //the welcome component has the header/navbar and the button to choose to search is toggled

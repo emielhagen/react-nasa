@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
-
 export default class PlayAgain extends Component {
 
   reloadPage = () => {
@@ -9,7 +8,6 @@ export default class PlayAgain extends Component {
   }
 
   render() {
-
     return (
       <div className="playagainbutton">
         <button onClick={this.reloadPage}>Again!</button>
